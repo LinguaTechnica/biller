@@ -1,27 +1,41 @@
-# InvoicifyClient
+# Invoicify Client
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
+Invoicify is an application that allows customers to manage business clients, and billing and invoicing services.
 
-## Development server
+Users are given an account. There they can view all the companies they do business with as well as the billing and invoice history.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+You may want to run the backend application with this, else you won't be able to login and view any data: https://github.com/gSchool/invoicify
 
-## Code scaffolding
+## TODO
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Navigation**
+- Add links menu (links will come later)
+- 
 
-## Build
+## Setup
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+WIP
 
-## Running unit tests
+### Install Node
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+To run Angular you require node. Download and install it here: https://nodejs.org/en/download/
 
-## Running end-to-end tests
+**Developers Only**
+You may want to install Node Version Manager (NVM). Different applications can require different versions of node. This is optional but recommended (does NOT work with Windows so skip if thats your OS: 
+https://github.com/nvm-sh/nvm#installation-and-update
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Install Invoicify
 
-## Further help
+It's a good idea to have the Angular CLI tool installed globally. Before you begin, see that you do: `npm install`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+``` 
+git clone this_repository
+cd this_repository
+npm install
+
+# Run server and open browser
+ng serve -o
+```
+
+You may want to run the backend application, else you won't be able to login and view any data: https://github.com/gSchool/invoicify
+
