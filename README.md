@@ -10,7 +10,17 @@ You may want to run the backend application with this, else you won't be able to
 
 **Navigation**
 - Add links menu (links will come later)
-- 
+- Add logo
+
+**Home**
+- Update app.component default layout
+- Add route
+
+**Auth**
+- Add auth service
+- Add user service
+- Inject auth into nav
+
 
 ## Setup
 
