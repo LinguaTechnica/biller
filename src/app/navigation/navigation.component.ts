@@ -17,18 +17,6 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit() {}
 
-  login(userForm) {
-    if (userForm.valid) {
-      // TODO: Auth - status check to give user feedback on success/fail
-      this.authService.login(userForm);
-    }
-  }
-
-  logout() {
-    // TODO: Auth - status check and redirect if necessary
-    this.authService.logout();
-  }
-
   refreshUser() {}
 
 }

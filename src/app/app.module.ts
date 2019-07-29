@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { HttpClientModule } from '@angular/common/http';
+import { InlineLoginFormComponent } from './inline-login-form/inline-login-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 /**
  * Root Module
@@ -20,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     NavigationComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    InlineLoginFormComponent
   ],
   /**
    * Provision the app. If your Angular client will use any additional modules
@@ -29,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
