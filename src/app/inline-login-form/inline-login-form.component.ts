@@ -1,0 +1,38 @@
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'inline-login-form',
+  templateUrl: './inline-login-form.component.html',
+  styleUrls: ['./inline-login-form.component.css']
+})
+export class InlineLoginFormComponent implements OnInit {
+  loginForm: FormGroup;
+  isAuthenticated;
+
+  constructor(private authService: AuthService, private fb: FormBuilder) {
+    this.isAuthenticated = this.authService.isAuthenticated();
+  }
+
+  ngOnInit() {
+    this.loginForm = this.fb.group({
+      username: ['', Validators.required],
+      password: ['']
+    });
+  }
+
+  login() {
+    if (this.loginForm.valid) {
+      // TODO: Auth - status check to give user feedback on success/fail
+      console.log(this.loginForm);
+      this.authService.login(this.loginForm);
+    }
+  }
+
+  logout() {
+    // TODO: Auth - status check and redirect if necessary
+    this.authService.logout();
+  }
+
+}
