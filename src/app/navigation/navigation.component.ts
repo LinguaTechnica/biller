@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from '../auth.service';
 
 @Component({
   selector: 'app-navigation',
@@ -12,13 +13,22 @@ export class NavigationComponent implements OnInit {
   // TODO: Can the auth service manage this instead?
   currentUser: string;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  login(userForm) {
+    if (userForm.valid) {
+      // TODO: Auth - status check to give user feedback on success/fail
+      this.authService.login(userForm);
+    }
   }
 
-  login(){}
-  logout(){}
-  refreshUser(){}
+  logout() {
+    // TODO: Auth - status check and redirect if necessary
+    this.authService.logout();
+  }
+
+  refreshUser() {}
 
 }
