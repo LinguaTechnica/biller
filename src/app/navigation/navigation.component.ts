@@ -11,12 +11,18 @@ export class NavigationComponent implements OnInit {
   errorMsg: string;
   successMsg: string;
   // TODO: Can the auth service manage this instead?
-  currentUser: string;
+  currentUser: string = this.authService.currentUser;
 
   constructor(private authService: AuthService) { }
 
   ngOnInit() {}
 
   refreshUser() {}
+
+  logout() {
+    // TODO: Auth - status check and redirect if necessary
+    // this.authService.logout();
+    localStorage.removeItem('currentUser');
+  }
 
 }

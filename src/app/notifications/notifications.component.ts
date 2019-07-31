@@ -9,6 +9,7 @@ export class NotificationsComponent implements OnInit {
   // TODO: ngIf will display if either visible.
   @Input() successMsg;
   @Input() errorMsg;
+  @Input() warningMsg;
 
   constructor() { }
 

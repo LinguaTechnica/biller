@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ApiUrls  as urls} from '../utils/api-urls.enum';
 import { environment as env } from '../../environments/environment';
+import {catchError} from 'rxjs/operators';
 
 abstract class RESTService {
   // Endpoints use LEADING SLASHES not trailing slashes

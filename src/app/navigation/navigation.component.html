@@ -1,30 +1,30 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary justify-content-between">
-  <a class="navbar-brand" href="#">Invoicify</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="/">Invoicify</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
     <div class="navbar-text navbar-right" *ngIf="authService.isAuthenticated(); else showLoginForm">
-      Signed in as: <a [routerLink]="['/user/edit/', currentUser.id]">{{currentUser.username}}</a> (<a (click)="logout()">Logout</a>)
+      Signed in as: <a routerLink="/account">{{currentUser.username}}</a> (<a (click)="logout()">Logout</a>)
     </div>
     <div class="navbar-collapse collapse" id="navbarColor01">
-      <ul class="nav navbar-nav">
-        <li routerLinkActive="active">
-          <a routerLink="/home">Home</a>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active" routerLinkActive="active">
+          <a class="nav-link" routerLink="/">Home</a>
         </li>
-        <li *ngIf="authService.isAuthenticated()" routerLinkActive="active">
-          <a routerLink="/company">Companies</a>
+        <li class="nav-item" *ngIf="authService.isAuthenticated()" routerLinkActive="active">
+          <a class="nav-link" routerLink="/company">Companies</a>
         </li>
-        <li *ngIf="authService.isAuthenticated()" routerLinkActive="active">
-          <a routerLink="/billing-record">Billing Records</a>
+        <li class="nav-item" *ngIf="authService.isAuthenticated()" routerLinkActive="active">
+          <a class="nav-link" routerLink="/billing">Billing Records</a>
         </li>
-        <li *ngIf="authService.isAuthenticated()" routerLinkActive="active">
-          <a routerLink="/invoice">Invoices</a>
+        <li class="nav-item" *ngIf="authService.isAuthenticated()" routerLinkActive="active">
+          <a class="nav-link" routerLink="/invoice">Invoices</a>
         </li>
-        <li *ngIf="authService.isAuthenticated()" routerLinkActive="active">
-          <a routerLink="/user">Users</a>
+        <li class="nav-item" *ngIf="authService.isAuthenticated()" routerLinkActive="active">
+          <a class="nav-link" routerLink="/user">Users</a>
         </li>
       </ul>
-      <inline-login-form></inline-login-form>
+      <inline-login-form *ngIf="!authService.isAuthenticated()"></inline-login-form>
 
       <ng-template #showLoginForm>
       </ng-template>

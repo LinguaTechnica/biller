@@ -22,8 +22,8 @@ export class InlineLoginFormComponent implements OnInit {
   login() {
     if (this.loginForm.valid) {
       // TODO: Auth - status check to give user feedback on success/fail
-      console.log(this.loginForm);
-      this.authService.login(this.loginForm);
+      console.log('form data', this.loginForm.value);
+      return this.authService.login(this.loginForm.value).subscribe();
     }
   }
 

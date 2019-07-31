@@ -11,6 +11,7 @@ import { InlineLoginFormComponent } from './inline-login-form/inline-login-form.
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import {Browser} from 'selenium-webdriver';
+import { BillingRecordComponent } from './billing-record/billing-record.component';
 
 /**
  * Root Module
@@ -27,7 +28,8 @@ import {Browser} from 'selenium-webdriver';
     NavigationComponent,
     NotificationsComponent,
     InlineLoginFormComponent,
-    HomeComponent
+    HomeComponent,
+    BillingRecordComponent
   ],
   /**
    * Provision the app. If your Angular client will use any additional modules
