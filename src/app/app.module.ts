@@ -1,13 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InlineLoginFormComponent } from './inline-login-form/inline-login-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import {Browser} from 'selenium-webdriver';
 
 /**
  * Root Module
@@ -23,7 +26,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     NavigationComponent,
     NotificationsComponent,
-    InlineLoginFormComponent
+    InlineLoginFormComponent,
+    HomeComponent
   ],
   /**
    * Provision the app. If your Angular client will use any additional modules
@@ -31,9 +35,10 @@ import { ReactiveFormsModule } from '@angular/forms';
    */
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

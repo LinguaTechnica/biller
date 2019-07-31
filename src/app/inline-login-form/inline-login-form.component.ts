@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth.service';
+import {Component, Input, OnInit} from '@angular/core';
+import { AuthService } from '../services/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -9,11 +9,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class InlineLoginFormComponent implements OnInit {
   loginForm: FormGroup;
-  isAuthenticated;
 
-  constructor(private authService: AuthService, private fb: FormBuilder) {
-    this.isAuthenticated = this.authService.isAuthenticated();
-  }
+  constructor(private authService: AuthService, private fb: FormBuilder) {}
 
   ngOnInit() {
     this.loginForm = this.fb.group({

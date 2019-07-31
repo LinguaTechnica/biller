@@ -3,11 +3,10 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-    <div class="navbar-text navbar-right" *ngIf="authService.isAuthenticated()">
+    <div class="navbar-text navbar-right" *ngIf="authService.isAuthenticated(); else showLoginForm">
       Signed in as: <a [routerLink]="['/user/edit/', currentUser.id]">{{currentUser.username}}</a> (<a (click)="logout()">Logout</a>)
     </div>
     <div class="navbar-collapse collapse" id="navbarColor01">
-      <inline-login-form></inline-login-form>
       <ul class="nav navbar-nav">
         <li routerLinkActive="active">
           <a routerLink="/home">Home</a>
@@ -25,6 +24,10 @@
           <a routerLink="/user">Users</a>
         </li>
       </ul>
+      <inline-login-form></inline-login-form>
+
+      <ng-template #showLoginForm>
+      </ng-template>
     </div>
 </nav>
 

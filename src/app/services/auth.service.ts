@@ -10,9 +10,6 @@ export class AuthService {
   private serviceUrl = 'http://localhost:8080/api/session';
   constructor(private http: HttpClient) { }
 
-  get() {
-    return of({name: 'jody', email: 'jody@ex.co'});
-  }
   login(user) {
     // TODO: HTTP status check needed?
     return this.http.post(this.serviceUrl, user)
