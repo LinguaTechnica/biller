@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ApiUrls  as urls} from '../utils/api-urls.enum';
 import { environment as env } from '../../environments/environment';
 import {catchError} from 'rxjs/operators';
+import {Injectable} from '@angular/core';
 
 abstract class RESTService {
   // Endpoints use LEADING SLASHES not trailing slashes
@@ -9,13 +10,15 @@ abstract class RESTService {
   protected baseUrl = env.baseUrl + urls.api;
   protected headers: object;
 
-  constructor(private http: HttpClient) {
+  constructor(protected http: HttpClient) {
     this.headers = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
     };
   }
+
+  // TODO: Most error handling should happen here, not in children.
 
   list() {
     return this.http.get(this.baseUrl, this.headers);
@@ -25,8 +28,8 @@ abstract class RESTService {
     return this.http.get(`${this.baseUrl}/${id}`, this.headers);
   }
 
-  create(data) {
-    return this.http.post(this.baseUrl, data, this.headers);
+  create(data, altUrl=this.baseUrl) {
+    return this.http.post(altUrl, data, this.headers);
   }
 
   update(data) {

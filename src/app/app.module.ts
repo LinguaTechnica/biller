@@ -8,10 +8,11 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InlineLoginFormComponent } from './inline-login-form/inline-login-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import {Browser} from 'selenium-webdriver';
 import { BillingRecordComponent } from './billing-record/billing-record.component';
+import { BillingFormComponent } from './billing-form/billing-form.component';
 
 /**
  * Root Module
@@ -29,7 +30,8 @@ import { BillingRecordComponent } from './billing-record/billing-record.componen
     NotificationsComponent,
     InlineLoginFormComponent,
     HomeComponent,
-    BillingRecordComponent
+    BillingRecordComponent,
+    BillingFormComponent
   ],
   /**
    * Provision the app. If your Angular client will use any additional modules
@@ -40,7 +42,8 @@ import { BillingRecordComponent } from './billing-record/billing-record.componen
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

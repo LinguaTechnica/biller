@@ -20,7 +20,7 @@ export class NavigationComponent implements OnInit {
   refreshUser() {}
 
   logout() {
-    // TODO: Auth - status check and redirect if necessary
+    // TODO: Auth - status check and add redirect
     // this.authService.logout();
     localStorage.removeItem('currentUser');
   }

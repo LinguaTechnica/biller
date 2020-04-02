@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { map, tap, catchError } from 'rxjs/operators';
+import { tap, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   private serviceUrl = 'http://localhost:8080/api/session';
-  currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  currentUser = JSON.parse(localStorage.getItem('currentUser')) || {};
 
   constructor(private http: HttpClient) { }
 
@@ -35,12 +35,10 @@ export class AuthService {
   }
 
   private userHandler(response) {
-    console.log('user handler', response);
     localStorage.setItem('currentUser', JSON.stringify({id: response.id, username: response.username}));
   }
 
-  private clearUser(response) {
-    console.log('logout');
+  private clearUser() {
     localStorage.removeItem('currentUser');
   }
 }
